@@ -2,8 +2,7 @@ const readline = require("readline");
 let fomul;
 let alphas = [];
 let compare = [];
-const arr = [1, 2, 3, 4];
-let ans = 0;
+let ans = -2147483648;
 
 function carculate() {
   const found = alphas.find(item => item.alpha === fomul[0]);
