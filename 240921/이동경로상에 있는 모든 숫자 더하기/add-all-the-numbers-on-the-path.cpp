@@ -41,6 +41,7 @@ int main() {
                     x += curDx;
                     y += curDy;
                     result += arr[y][x];
+                    arr[y][x] = 0;
                 }
                 break;
             case 'L': 
