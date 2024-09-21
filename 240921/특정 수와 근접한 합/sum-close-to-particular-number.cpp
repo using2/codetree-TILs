@@ -8,7 +8,7 @@ int sum = 0;
 int ans = 0;
 vector<int> arr(1000, 0);
 
-void sol(vector<int>& combination) {
+void sol(vector<int>& combination, int start) {
     if(combination.size() == 2) {
         int num1 = combination[0];
         int num2 = combination[1];
@@ -19,9 +19,9 @@ void sol(vector<int>& combination) {
         return;
     }
 
-    for(int i = 0; i < N; i++) {
+    for(int i = start; i < N; i++) {
         combination.push_back(arr[i]);
-        sol(combination);
+        sol(combination, i + 1);
         combination.pop_back();
     }
 }
@@ -37,7 +37,7 @@ int main() {
         sum += num;
     }
 
-    sol(combination);
+    sol(combination, 0);
 
     cout << abs(S - ans);
 
